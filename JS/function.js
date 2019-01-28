@@ -15,6 +15,15 @@ $(document).ready(()=>{
 		
 	});
 
+	var pesquisa = new Pesquisa();
+
+	pesquisa.search("Itachi Uchiha", 1);
+	pesquisa.search("Vegeta", 2);
+	pesquisa.search("Okabe Rintarou", 3);
+	pesquisa.search("Edward Elric", 4);
+
+
+
 
 	//executa a pesquisa de personagens com Ajax e API kitsu
 	$('.button').on("click", function(){
@@ -31,6 +40,8 @@ $(document).ready(()=>{
 				url:"https://kitsu.io/api/edge/characters?filter[name]="+name+"",
 				dataType:"json",
 				success: function(data){
+
+					console.log(data.data[0]);
 
 					//verifica se o nome na barra de pesquisas está vazio
 					if ($('.search').val()===""){
