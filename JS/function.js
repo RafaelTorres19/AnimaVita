@@ -48,7 +48,7 @@ $(document).ready(()=>{
 						//caso esteja vazio, mostra aviso de que necessita digitar um nome
 						$('.empty').fadeIn();
 						window.setTimeout(()=>{
-							$('.search-validate').fadeOut();
+							$('.empty').fadeOut();
 						}, 2500);
 					}else{
 						//caso não exista o personagem pesquisado, mostra aviso.
